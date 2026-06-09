@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - AGROBIASHARA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <!-- [img src="../images/logo.png" alt="AGROBIASHARA Logo" style="width:60px; height:60px; border-radius:8px;"] -->
+                <a href="../index.html" class="logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <span class="logo-text">AGROBIASHARA</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Register Form -->
+    <section style="padding: 2rem 20px; max-width: 500px; margin: 0 auto;">
+        <form class="form-container" onsubmit="handleRegister(event)" title="Registration form">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-green);">
+                <i class="fas fa-user-plus"></i> Create Account
+            </h2>
+
+            <div class="form-group">
+                <label>I am a: *</label>
+                <div style="display: flex; gap: 1rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="radio" name="role" value="buyer" checked title="Register as buyer"> Buyer
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="radio" name="role" value="farmer" title="Register as farmer"> Farmer
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" required placeholder="Your name" title="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" required placeholder="your@email.com" title="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label>Phone *</label>
+                <input type="tel" required placeholder="+254 7XX XXX XXX" title="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <label>Password *</label>
+                <input type="password" required placeholder="Create password" title="Create a password">
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password *</label>
+                <input type="password" required placeholder="Confirm password" title="Confirm your password">
+            </div>
+
+            <div id="farmerFields" style="display: none;">
+                <div class="form-group">
+                    <label>Farm Name</label>
+                    <input type="text" placeholder="Your farm name" title="Enter your farm name">
+                </div>
+                <div class="form-group">
+                    <label>Farm Location</label>
+                    <input type="text" placeholder="County/Region" title="Enter your farm location">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" required title="Accept terms and conditions"> I agree to Terms & Conditions
+                </label>
+            </div>
+
+            <button type="submit" class="form-submit" title="Create your account">
+                <i class="fas fa-user-plus"></i> Create Account
+            </button>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--light-text);">
+                Already have an account? <a href="login.html" style="color: var(--primary-green); font-weight: 600; text-decoration: none;" title="Login to account">Login</a>
+            </p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-bottom">
+                <p>&copy; 2024 AGROBIASHARA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show/hide farmer fields based on role selection
+        document.querySelectorAll('input[name="role"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('farmerFields').style.display = this.value === 'farmer' ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

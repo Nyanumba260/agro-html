@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - AGROBIASHARA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container-fluid">
+            <div class="nav-left">
+                <a href="#help" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="register.html?role=farmer" class="nav-link"><i class="fas fa-store"></i> Sell</a>
+            </div>
+            <div class="nav-right">
+                <a href="login.html" class="nav-link"><i class="fas fa-user"></i> Account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <!-- [img src="../images/logo.png" alt="AGROBIASHARA Logo" style="width:60px; height:60px; border-radius:8px;"] -->
+                <a href="../index.html" class="logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <span class="logo-text">AGROBIASHARA</span>
+                </a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button class="search-btn" onclick="searchProducts()" title="Search products"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-right">
+                    <a href="cart.html" class="header-icon" title="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container-fluid">
+            <div class="categories-scroll">
+                <div class="category-item active" onclick="filterByCategory('all')">
+                    <div class="category-icon"><i class="fas fa-th"></i></div>
+                    <span>All</span>
+                </div>
+                <div class="category-item" onclick="filterByCategory('vegetables')">
+                    <div class="category-icon"><i class="fas fa-carrot"></i></div>
+                    <span>Vegetables</span>
+                </div>
+                <div class="category-item" onclick="filterByCategory('fruits')">
+                    <div class="category-icon"><i class="fas fa-apple-alt"></i></div>
+                    <span>Fruits</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="featured-section">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2>All Products</h2>
+            </div>
+            <div class="products-container" id="productsContainer">
+                <!-- Products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AGROBIASHARA</h4>
+                    <p>Fresh Farm Produce Delivered</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +254 722 736 023</p>
+                    <p><i class="fas fa-envelope"></i> Agrobiashara@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AGROBIASHARA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

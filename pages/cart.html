@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - AGROBIASHARA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container-fluid">
+            <div class="nav-left">
+                <a href="#help" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+            </div>
+            <div class="nav-right">
+                <a href="login.html" class="nav-link"><i class="fas fa-user"></i> Account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <!-- [img src="../images/logo.png" alt="AGROBIASHARA Logo" style="width:60px; height:60px; border-radius:8px;"] -->
+                <a href="../index.html" class="logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <span class="logo-text">AGROBIASHARA</span>
+                </a>
+                <div style="flex: 1;"></div>
+                <div class="header-right">
+                    <a href="cart.html" class="header-icon" title="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Content -->
+    <section style="padding: 2rem 20px; max-width: 1400px; margin: 0 auto;">
+        <h1 style="margin-bottom: 2rem;">Shopping Cart</h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr 350px; gap: 2rem;">
+            <div id="cartItems">
+                <!-- Cart items loaded by JavaScript -->
+            </div>
+
+            <div>
+                <div style="background: white; padding: 1.5rem; border-radius: 4px; box-shadow: var(--shadow);">
+                    <h3 style="margin-bottom: 1.5rem;">Delivery Location</h3>
+                    <select id="deliveryLocation" onchange="loadCart()" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif;" title="Select delivery location">
+                        <option value="Nairobi">Nairobi - KES 300</option>
+                        <option value="Kiambu">Kiambu - KES 400</option>
+                        <option value="Nakuru">Nakuru - KES 600</option>
+                        <option value="Kisumu">Kisumu - KES 800</option>
+                        <option value="Mombasa">Mombasa - KES 900</option>
+                        <option value="Kericho">Kericho - KES 700</option>
+                        <option value="Eldoret">Eldoret - KES 750</option>
+                        <option value="Machakos">Machakos - KES 500</option>
+                        <option value="Nyeri">Nyeri - KES 550</option>
+                        <option value="Thika">Thika - KES 350</option>
+                        <option value="Naivasha">Naivasha - KES 550</option>
+                        <option value="Meru">Meru - KES 850</option>
+                        <option value="Kakamega">Kakamega - KES 900</option>
+                        <option value="Other">Other - KES 1000</option>
+                    </select>
+
+                    <div id="cartSummary">
+                        <!-- Summary loaded by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AGROBIASHARA</h4>
+                    <p>Fresh Farm Produce</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +254 722 736 023</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AGROBIASHARA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
