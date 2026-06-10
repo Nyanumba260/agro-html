@@ -1,7 +1,7 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-    --primary-green: #2d5016;
-    --secondary-green: #4a7c2c;
+    --primary-green: #165020;
+    --secondary-green: #2c7c47;
     --accent-orange: #ff8c42;
     --accent-yellow: #ffd700;
     --dark-text: #222;
@@ -194,7 +194,7 @@ body {
 
 /* ===== HERO BANNER ===== */
 .hero-banner {
-    background: linear-gradient(135deg, rgba(45,80,22,0.7) 0%, rgba(74,124,44,0.7) 100%), #4a7c2c;
+    background: linear-gradient(135deg, rgba(22, 80, 28, 0.7) 0%, rgba(74,124,44,0.7) 100%), #4a7c2c;
     background-size: cover;
     background-position: center;
     color: white;

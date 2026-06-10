@@ -1,17 +1,17 @@
 // ===== PRODUCTS DATA =====
 const products = [
-    { id: 1, name: 'Fresh Tomatoes', price: 150, originalPrice: 200, category: 'vegetables', farmer: 'John Mwangi', rating: 4.8, discount: '25%' },
-    { id: 2, name: 'Carrots Bundle', price: 120, originalPrice: 150, category: 'vegetables', farmer: 'Sarah Kipchoge', rating: 4.6, discount: '20%' },
-    { id: 3, name: 'Lettuce (Fresh)', price: 100, originalPrice: 130, category: 'vegetables', farmer: 'Grace Ochieng', rating: 4.7, discount: '23%' },
-    { id: 4, name: 'Onions (2kg)', price: 80, originalPrice: 120, category: 'vegetables', farmer: 'Peter Kimani', rating: 4.5, discount: '33%' },
-    { id: 5, name: 'Potatoes (5kg)', price: 200, originalPrice: 280, category: 'vegetables', farmer: 'David Kipkemboi', rating: 4.9, discount: '29%' },
-    { id: 6, name: 'Sweet Corn', price: 180, originalPrice: 240, category: 'vegetables', farmer: 'Mary Wanjiru', rating: 4.7, discount: '25%' },
-    { id: 7, name: 'Cabbage (2)', price: 90, originalPrice: 130, category: 'vegetables', farmer: 'James Kiplagat', rating: 4.6, discount: '31%' },
-    { id: 8, name: 'Bell Peppers (6)', price: 200, originalPrice: 280, category: 'vegetables', farmer: 'Lucy Muthoni', rating: 4.8, discount: '29%' },
-    { id: 9, name: 'Bananas (1kg)', price: 250, originalPrice: 320, category: 'fruits', farmer: 'Charles Kipchoge', rating: 4.9, discount: '22%' },
-    { id: 10, name: 'Oranges (2kg)', price: 300, originalPrice: 400, category: 'fruits', farmer: 'Rose Kipchoge', rating: 4.7, discount: '25%' },
-    { id: 11, name: 'Watermelon', price: 350, originalPrice: 450, category: 'fruits', farmer: 'Samuel Kiplagat', rating: 4.8, discount: '22%' },
-    { id: 12, name: 'Mangoes (3kg)', price: 280, originalPrice: 380, category: 'fruits', farmer: 'Patricia Kipchoge', rating: 4.9, discount: '26%' }
+    { id: 1, name: 'Fresh Tomatoes', price: 150, originalPrice: 200, category: 'vegetables', farmer: 'John Mwangi', rating: 4.8, discount: '25%', image: 'images/fresh tomatoes.jpg' },
+    { id: 2, name: 'Carrots Bundle', price: 120, originalPrice: 150, category: 'vegetables', farmer: 'Sarah Kipchoge', rating: 4.6, discount: '20%', image: 'images/carrot bundles.jpg' },
+    { id: 3, name: 'Lettuce (Fresh)', price: 100, originalPrice: 130, category: 'vegetables', farmer: 'Grace Ochieng', rating: 4.7, discount: '23%', image: 'images/lettuce.jpg' },
+    { id: 4, name: 'Onions (2kg)', price: 80, originalPrice: 120, category: 'vegetables', farmer: 'Peter Kimani', rating: 4.5, discount: '33%', image: 'images/onions.jpg' },
+    { id: 5, name: 'Potatoes (5kg)', price: 200, originalPrice: 280, category: 'vegetables', farmer: 'David Kipkemboi', rating: 4.9, discount: '29%', image: 'images/potatoes.jpg' },
+    { id: 6, name: 'Sweet Corn', price: 180, originalPrice: 240, category: 'vegetables', farmer: 'Mary Wanjiru', rating: 4.7, discount: '25%', image: 'images/sweet corn.jpg' },
+    { id: 7, name: 'Cabbage (2)', price: 90, originalPrice: 130, category: 'vegetables', farmer: 'James Kiplagat', rating: 4.6, discount: '31%', image: 'images/cabbage.jpg' },
+    { id: 8, name: 'Bell Peppers (6)', price: 200, originalPrice: 280, category: 'vegetables', farmer: 'Lucy Muthoni', rating: 4.8, discount: '29%', image: 'images/bell pepper.jpg' },
+    { id: 9, name: 'Bananas (1kg)', price: 250, originalPrice: 320, category: 'fruits', farmer: 'Charles Kipchoge', rating: 4.9, discount: '22%', image: 'images/bananas.jpg' },
+    { id: 10, name: 'Oranges (2kg)', price: 300, originalPrice: 400, category: 'fruits', farmer: 'Rose Kipchoge', rating: 4.7, discount: '25%', image: 'images/oranges.jpg' },
+    { id: 11, name: 'Watermelon', price: 350, originalPrice: 450, category: 'fruits', farmer: 'Samuel Kiplagat', rating: 4.8, discount: '22%', image: 'images/watermelon.jpg' },
+    { id: 12, name: 'Mangoes (3kg)', price: 280, originalPrice: 380, category: 'fruits', farmer: 'Patricia Kipchoge', rating: 4.9, discount: '26%', image: 'images/mangoes.jpg' }
 ];
 
 // ===== DELIVERY CHARGES =====
@@ -125,12 +125,16 @@ function loadFlashSaleProducts() {
 }
 
 // ===== CREATE PRODUCT CARD =====
+function getProductImagePath(imagePath) {
+    // Use correct relative path depending on whether the page is inside /pages/
+    return window.location.pathname.includes('/pages/') ? `../${imagePath}` : imagePath;
+}
+
 function createProductCard(product) {
     return `
         <div class="product-card">
             <div class="product-image">
-                <!-- DIRECTIVE: Replace with <img src="images/product-${product.id}.jpg" alt="${product.name}"> -->
-                <i class="fas fa-image"></i>
+                <img src="${getProductImagePath(product.image)}" alt="${product.name}">
                 <span class="product-badge">${product.discount} OFF</span>
             </div>
             <div class="product-info">
